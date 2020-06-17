@@ -59,11 +59,11 @@ class getDatasetMapper(Mapper):
         for line in self:
             filepath = os.environ['mapreduce_map_input_file']
             MovieID = os.path.split(filepath)[-1]
-	    try:
+            try:
                 UserID, rate, date = line.split(',')
                 self.emit(UserID, MovieID + ',' + rate)
             except:
-		pass
+                pass
 
 
 if __name__ == "__main__":

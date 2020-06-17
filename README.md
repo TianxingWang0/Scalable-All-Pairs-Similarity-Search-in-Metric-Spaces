@@ -1,2 +1,4 @@
 # Scalable-All-Pairs-Similarity-Search-in-Metric-Spaces
-Use part of `Netflix dataset` to implement the experiment of the paper `Scalable-All-Pairs-Similarity-Search-in-Metric-Spaces`.
+
+Reimplement experiment part of the paper 
+[Scalable all-pairs similarity search in metric spaces](https://dl.acm.org/doi/10.1145/2487575.2487625)
