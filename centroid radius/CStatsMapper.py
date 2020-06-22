@@ -71,8 +71,8 @@ class CStatsMapper(Mapper):
     def map(self):
         for record in self:
             try:
-	            UserID, pi = record.split('\t')
-                pi = [int(i) for i in pi]            
+                UserID, pi = record.split('\t')
+                pi = [int(i) for i in pi]
                 key = 0
                 minDist = 8 * (5 ** 0.5)
                 for i in range(len(self.centroids)):

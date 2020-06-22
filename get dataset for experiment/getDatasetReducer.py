@@ -76,24 +76,24 @@ class getDatasetReducer(Reducer):
 
     def reduce(self):
         for UserID, values in self:
-           res = ['0'] * 20
-           sum = 0
-	   counter = 0
-           for value in values:
-	       counter += 1
-               MovieID, rate = value[1].split(',')
-               res[MovieIDList.index(MovieID)] = rate
-               sum += int(rate)
-           mean = str(int(sum / 20))
-           number_of_zero = 0
-           for i in res:
-               if i == '0':
-                   number_of_zero += 1
-           if number_of_zero <= 4:
-               for i in range(20):
-                   if res[i] == '0':
-                       res[i] = mean
-               self.emit(UserID, ''.join(res))
+            res = ['0'] * 20
+            sum = 0
+            counter = 0
+            for value in values:
+                counter += 1
+                MovieID, rate = value[1].split(',')
+                res[MovieIDList.index(MovieID)] = rate
+                sum += int(rate)
+            mean = str(int(sum / 20))
+            number_of_zero = 0
+            for i in res:
+                if i == '0':
+                    number_of_zero += 1
+            if number_of_zero <= 4:
+                for i in range(20):
+                    if res[i] == '0':
+                        res[i] = mean
+                self.emit(UserID, ''.join(res))
 
 
 if __name__ == '__main__':
